@@ -20,4 +20,11 @@ public class HelloController {
 	return "index";
     }
 
+    @RequestMapping("/form")
+    public String form(ModelMap model, NameForm form) {
+	model.addAttribute("form", form);
+	model.addAttribute("name", form.getName());
+	return "form";
+    }
+
 }

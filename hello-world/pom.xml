@@ -8,6 +8,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.1.0.M2</spring.version>
+		<jangod.version>1.0-SNAPSHOT</jangod.version>
 	</properties>
 	<dependencies>
 		<!-- Servlet -->
@@ -21,7 +22,12 @@
 		<dependency>
 			<groupId>org.jangod</groupId>
 			<artifactId>jangod</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>${jangod.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jangod</groupId>
+			<artifactId>jangod-forms</artifactId>
+			<version>${jangod.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>

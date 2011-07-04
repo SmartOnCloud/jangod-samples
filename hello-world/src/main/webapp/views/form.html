@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h1>Jangod Forms!</h1>
+<form method="post">
+
+{{ form.as_table }}
+<input type="submit" value="OK"/>
+</form>
+{% if name %}<br/><br/>Hello {{ name }}!!!{% endif %}
+{% endblock %}
