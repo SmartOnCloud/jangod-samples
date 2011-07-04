@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class HelloController {
-
+    
     @RequestMapping(value = { "/index", "" })
     public String index(ModelMap model,
 	    @RequestParam(required = false) String name) {
