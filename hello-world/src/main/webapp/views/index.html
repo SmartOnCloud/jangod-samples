@@ -19,9 +19,9 @@ Hello {{ name }}
 </ul>
 
 {# list reverse iteration example #}
-<h2>Reversed list items (size: {{ list.size }}):</h2>
+<h2>Reversed list items with loop properties (size: {{ list.size }}):</h2>
 <ul>
-{% for item in list|reverse %}<li>{{ item }}{% endfor %}
+{% for item in list|reverse %}<li>{{ item }} -> loop properties (first={{ loop.first }}, last={{ loop.last }}, counter={{ loop.counter }}, index={{ loop.index }}){% endfor %}
 </ul>
 
 {# map  iteration example #}
@@ -38,6 +38,6 @@ Map value for 'key_1': {{ map.key_1 }} <br/>
 Map value for 'key_2': {{ map.key_2|default:"(not found)" }} <br/>
 Map value for 'key_4': {{ map.key_4|default:"(not found)" }} <br/>
 
-
+{{ properties }}
 
 {% endblock %}

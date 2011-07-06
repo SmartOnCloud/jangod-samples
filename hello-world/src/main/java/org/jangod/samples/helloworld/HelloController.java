@@ -6,7 +6,6 @@ import java.util.HashMap;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Main application controller
@@ -17,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HelloController {
 
     @RequestMapping("/index")
-    public String index(ModelMap model,
-	    @RequestParam(required = false) String name) {
-	model.addAttribute("name", name);
+    public String index(ModelMap model) {
 	model.addAttribute("array", new String[] { "Item 1", "Item 2", "Item 3" });
 	model.addAttribute("list", Arrays.asList(new String[] { "Item 1", "Item 2", "Item 3","Item 4" }));
 	
@@ -28,6 +25,8 @@ public class HelloController {
 	map.put("key_2", "value_2");;
 	map.put("key_3", "value_3");;
 	model.addAttribute("map", map);
+	model.addAttribute("properties", System.getProperties());
+
 	return "index";
     }
 

@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h1>Jangod Forms Example with spring validation!</h1>
+<form method="get">
+<table>
+{{ form.as_table }}
+</table>
+<input type="submit" value="OK"/>
+</form>
+<br/>
+number of errors: {{ errors.errorCount }} <br/>
+{{ errors.fieldError.field }} <br/>
+{{ errors.fieldError.rejectedValue }} <br/>
+{{ errors.fieldError.defaultMessage }}
+<br/>
+{% if form %}<br/><br/>You entered: {{ form }} {% endif %}
+
+{% endblock %}

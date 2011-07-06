@@ -1,0 +1,19 @@
+{# 
+		Base HTML skeleton.  
+#}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    {% block style %}{% endblock %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    {% block script %}{% endblock %}
+</head>
+<body>
+{# <a href="index.html">Hello World</a> | <a href="form.html">Jangod Forms</a> #}
+{% block content %}
+{% endblock %}
+</body>
+</html>
