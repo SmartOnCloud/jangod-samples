@@ -15,7 +15,6 @@
 	<bean id="jangodConf"
 		class="org.springframework.web.servlet.view.jangod.JangodConfigurer">
 		<property name="configurationFile" value="jangod.config.properties" />
-		<property name="messageSource" ref="messageSource" />
 	</bean>
 
 	<bean class="org.springframework.web.servlet.view.jangod.JangodViewResolver">
