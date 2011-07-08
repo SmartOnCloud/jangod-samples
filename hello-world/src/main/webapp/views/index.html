@@ -1,10 +1,27 @@
 {% extends 'base.html' %} 
 {% block content %}
 <h1>Hello World!</h1>
-See the <a href="https://github.com/SmartOnCloud/jangod-samples/blob/master/hello-world/src/main/java/org/jangod/samples/helloworld/HelloController.java" target="_blank"> controller</a> and <a href="https://github.com/SmartOnCloud/jangod-samples/blob/master/hello-world/src/main/webapp/views/index.html" target="_blank">template</a> source. 
-{% if name %}
-Hello {{ name }}
-{% endif %}
+See the <a href="https://github.com/SmartOnCloud/jangod-samples/blob/master/hello-world/src/main/java/org/jangod/samples/helloworld/HelloController.java" target="_blank"> controller</a> and <a href="https://github.com/SmartOnCloud/jangod-samples/blob/master/hello-world/src/main/webapp/views/index.html" target="_blank">template</a> source.
+
+<br/> 
+{% for item in map %}<li>{{ item.key }} - {{ item.value }}{% endfor %}
+
+<br/><br/>
+Random number from SpEL: {{ T(java.lang.Math).random() * 100.0 }}
+<br/>
+list length: {{ list|length }}
+<br/>
+SpEL list length: {{ {1,2,3,4,"test"}|length }}
+<br/>
+
+{% for item in {1,2,3,4,"test"} %}
+{{ item }} {{ loop.index }} <br/>
+	{% for item2 in {5,6,7} %}
+	- {{ item2 }} {{ loop.index }}<br/>
+	{% endfor %}
+{% endfor %}
+
+{{ now }}
 
 {# array iteration example #}
 <h2>Array items:</h2>
@@ -12,32 +29,36 @@ Hello {{ name }}
 {% for item in array %}<li>{{ item }}{% endfor %}
 </ul>
 
+{% if 'igor'=='igor' %}
+{{ 'igor'=='igor' }}
+{% endif %}
+
+
 {# list  iteration example #}
-<h2>List items (size: {{ list.size }}):</h2>
+<h2>List items (size: {{ list|length }}):</h2>
 <ul>
 {% for item in list %}<li>{{ item }}{% endfor %}
 </ul>
 
 {# list reverse iteration example #}
-<h2>Reversed list items with loop properties (size: {{ list.size }}):</h2>
+<h2>Reversed list items with loop properties (size: {{ list|length }}):</h2>
 <ul>
 {% for item in list|reverse %}<li>{{ item }} -> loop properties (first={{ loop.first }}, last={{ loop.last }}, counter={{ loop.counter }}, index={{ loop.index }}){% endfor %}
 </ul>
 
 {# map  iteration example #}
-<h2>Map entries (size: {{ map.size }}):</h2>
+<h2>Map entries (size: {{ map.size() }}):</h2>
 <ul>
 {% for item in map %}<li>{{ item.key }} - {{ item.value }}{% endfor %}
 </ul>
 
 {# direct map access #}
 <h2>Direct map access:</h2>
-Map keys: {{ map.keySet }} <br/>
+Map keys: {{ map.keySet() }} <br/>
 Map size: {{ map|length }} <br/>
 Map value for 'key_1': {{ map.key_1 }} <br/>
 Map value for 'key_2': {{ map.key_2|default:"(not found)" }} <br/>
 Map value for 'key_4': {{ map.key_4|default:"(not found)" }} <br/>
 
-{{ properties }}
 
 {% endblock %}
