@@ -57,12 +57,9 @@ Map value for 'key_2' split (_) to Array and shown as list: {{  T(java.util.Arra
 {% for item in {1,2,3,4,"test"} %}
 <li>[{{ loop.index }}] {{ item }} <br/>
 <ul>
-	{% for item2 in {5,6,7} %}
-	<li>[{{ loop.index }}] - {{ item2 }} <br/>
-	{% endfor %}
+	{% for item2 in {5,6,7} %}<li>[{{ loop.index }}] - {{ item2 }} <br/>{% endfor %}
 	</ul>
 {% endfor %}
 </ul>
-
 
 {% endblock %}
