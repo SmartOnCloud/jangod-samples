@@ -1,0 +1,30 @@
+{% extends coffe_base.html %}
+{% block title %}Coffepedia{% endblock %}
+{% block header %}Random tip{% endblock %}
+{% block headerText %}{{ tip }}{% endblock %} 
+
+{% block topics %}
+{% for topic in topics %}
+ <li>
+	<section class="block">
+		<a href="#"><img src="{{ topic.image }}" alt=""  /></a> 
+		<h2><a href="#">{{ topic.title }}</a></h2> 
+		<p>{{ topic.text }}</p> 
+	</section>
+</li>
+{% endfor %}
+{% endblock %}
+{% block footer %}
+    <section>
+	    <h3>Left Stuff</h3>
+	    <p>Left aligned text here. Proin metus odio, ultricies eu pharetra dictum, laoreet id odio. Curabitur in odio augue. Morbi congue auctor interdum. Phasellus sit amet metus justo.</p>
+    </section>
+    <section>
+	    <h3>Center Stuff</h3>
+    </section>
+    <section>
+	    <h3>Right Stuff</h3>
+	    <p>Left aligned text here. Proin metus odio, ultricies eu pharetra dictum, laoreet id odio. Curabitur in odio augue. Morbi congue auctor interdum. Phasellus sit amet metus justo.</p>
+	    <p>Next line here</p>
+    </section>
+{% endblock %}
