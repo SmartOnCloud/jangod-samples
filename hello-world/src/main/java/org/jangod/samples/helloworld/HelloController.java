@@ -3,9 +3,10 @@ package org.jangod.samples.helloworld;
 import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -24,7 +25,7 @@ public class HelloController {
     ApplicationContext ctx;
 
     @RequestMapping("/index")
-    public String index(ModelMap model) {
+    public String index(ModelMap model, HttpServletRequest req) {
 	model.addAttribute("array",
 		new String[] { "Item 1", "Item 2", "Item 3" });
 	model.addAttribute("list", asList(new String[] { "Item 1", "Item 2",
@@ -37,6 +38,10 @@ public class HelloController {
 	model.addAttribute("map", map);
 	model.addAttribute("properties", System.getProperties());
 	model.addAttribute("ctx", ctx);
+	String localAddr = req.getLocalAddr();
+	int localPort = req.getLocalPort();
+	model.addAttribute("addr", localAddr);
+	model.addAttribute("port", localPort);
 	return "index";
     }
 
