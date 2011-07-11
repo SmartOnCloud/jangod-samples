@@ -61,5 +61,8 @@ Map value for 'key_2' split (_) to Array and shown as list: {{  T(java.util.Arra
 	</ul>
 {% endfor %}
 </ul>
-
+<h2>System properties</h2>
+{% for property in properties %}
+{{ property }} <br/>
+{% endfor %}
 {% endblock %}

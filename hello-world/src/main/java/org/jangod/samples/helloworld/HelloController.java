@@ -1,5 +1,7 @@
 package org.jangod.samples.helloworld;
 
+import static java.util.Arrays.asList;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,22 +27,16 @@ public class HelloController {
     public String index(ModelMap model) {
 	model.addAttribute("array",
 		new String[] { "Item 1", "Item 2", "Item 3" });
-	model.addAttribute(
-		"list",
-		Arrays.asList(new String[] { "Item 1", "Item 2", "Item 3",
-			"Item 4" }));
+	model.addAttribute("list", asList(new String[] { "Item 1", "Item 2",
+		"Item 3", "Item 4" }));
 
 	HashMap<String, String> map = new HashMap<String, String>();
 	map.put("key_1", "value_1");
-	;
 	map.put("key_2", "value_2");
-	;
 	map.put("key_3", "value_3");
-	;
 	model.addAttribute("map", map);
 	model.addAttribute("properties", System.getProperties());
 	model.addAttribute("ctx", ctx);
-
 	return "index";
     }
 
