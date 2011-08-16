@@ -8,7 +8,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.1.0.M2</spring.version>
-		<jangod.version>1.0-SNAPSHOT</jangod.version>
+		<jangod.version>1.0-spel-SNAPSHOT</jangod.version>
+		<jangod-forms.version>1.0-SNAPSHOT</jangod-forms.version>
 		<slf4j.version>1.6.1</slf4j.version>
 	</properties>
 	<dependencies>
@@ -28,7 +29,7 @@
 		<dependency>
 			<groupId>org.jangod</groupId>
 			<artifactId>jangod-forms</artifactId>
-			<version>${jangod.version}</version>
+			<version>${jangod-forms.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -86,6 +87,11 @@
 		</plugins>
 	</build>
 	<repositories>
+		<repository>
+			<id>JANGOD_REPO</id>
+			<name>Jangod repository</name>
+			<url>https://qcode.cloudfoundry.com/s/jangod/maven/</url>
+		</repository>
 		<repository>
 			<!-- Spring Milestones repository -->
 			<id>org.springframework.maven.milestone</id>
