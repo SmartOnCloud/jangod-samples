@@ -8,7 +8,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.1.0.M2</spring.version>
-		<jangod.version>1.0-spel-SNAPSHOT</jangod.version>
+		<jangod.version>1.0-SNAPSHOT</jangod.version>
 		<jangod-forms.version>1.0-SNAPSHOT</jangod-forms.version>
 		<slf4j.version>1.6.1</slf4j.version>
 	</properties>
