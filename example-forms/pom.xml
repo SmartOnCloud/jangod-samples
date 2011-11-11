@@ -87,6 +87,11 @@
 	</build>
 	<repositories>
 		<repository>
+			<id>JANGOD_REPO</id>
+			<name>Jangod repository</name>
+			<url>https://r.tasktop.com/s/jangod/maven/</url>
+		</repository>
+		<repository>
 			<!-- Spring Milestones repository -->
 			<id>org.springframework.maven.milestone</id>
 			<name>Spring Maven Milestone Repository</name>
